@@ -14,11 +14,12 @@ eleventyNavigation:
 Eleventy automatically helps you make sure that [Cool URIs don’t change](https://www.w3.org/Provider/Style/URI.html).
 
 > What to leave out…
+>
 > File name extension. This is a very common one. "cgi", even ".html" is something which will change. You may not be using HTML for that page in 20 years time, but you might want today's links to it to still be valid. The canonical way of making links to the W3C site doesn't use the extension.
 
 ## Default Input/Output Examples
 
-Assuming your `--output` directory is the default, `_site`:
+Assuming your `--output` directory is the default (`_site`):
 
 
 <table>
@@ -119,7 +120,7 @@ Both of the above examples will write to `_site/this-is-a-new-path/subdirectory/
 
 ### `permalink: false`
 
-If you set the `permalink` value to be `false`, this will disable writing the file to disk in your output folder. The file will still be processed normally (and present in collections, with its [`url` and `outputPath` properties](/docs/data-eleventy-supplied/) set to `false`) but will not be available in your output directory as a standalone template.
+If you set the `permalink` value to be `false`, this will disable writing the file to disk in your output folder. The file will still be processed normally&mdash;so it will be present in collections (with its [`url` and `outputPath` properties](/docs/data-eleventy-supplied/) set to `false`)&mdash;but will not be available in your output directory as a standalone template.
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
@@ -162,12 +163,12 @@ permalink: "{{ page.filePathStem }}.html"
 ```
 {% endraw %}
 
-The error message might look like `can not read a block mapping entry; a multiline key may not be an implicit key`.
+The error message might look like: `can not read a block mapping entry; a multiline key may not be an implicit key`.
 
 
 ### Disable templating in permalinks {% addedin "0.7.0" %}
 
-Some template syntaxes are nicer than others and you may want to opt-out of the templating engine here. Use the `dynamicPermalink` option in your front matter to disable this on a per-template basis.
+Some template syntaxes are nicer than others, and you may want to opt-out of the templating engine here. Use the `dynamicPermalink` option in your front matter to disable this on a per-template basis.
 
 {% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>common pitfall</strong></a> for users of the Pug templating engine.{% endcallout %}
 
@@ -182,7 +183,7 @@ dynamicPermalink: false
 
 #### Globally disable templating in permalinks {% addedin "0.3.4" %}
 
-Eleventy includes a global configuration option to disable dynamic templating altogether. This will save a few template renders and is probably marginally faster, too.
+Eleventy includes a global configuration option to disable dynamic templating altogether. This will save a few template renders. (And it’s probably marginally faster, too!)
 
 {% codetitle ".eleventy.js" %}
 
@@ -223,7 +224,7 @@ permalink: "/{{ page.date | date: '%Y/%m/%d' }}/index.html"
 ```
 {% endraw %}
 
-Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the page.date variable can be set (using `date` in your front matter is just one of them). Read more about [Content dates](/docs/dates/).
+Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the `page.date` variable can be set (using `date` in your front matter is just one of them). [Read more about Content dates](/docs/dates/).
 
 ### Ignore the output directory {% addedin "0.1.4" %}
 
@@ -238,7 +239,7 @@ permalinkBypassOutputDir: true
 ---
 ```
 
-Writes to `_includes/index.html` even though the output directory is `_site`. This is useful for writing child templates to the `_includes` directory for re-use in your other templates.
+Writes to `_includes/index.html` even though the output directory is `_site`. This is useful for writing child templates to the `_includes` directory for reuse in your other templates.
 
 ### Custom File Formats
 
@@ -257,5 +258,5 @@ permalink: "index.json"
 
 ### Pagination
 
-Pagination variables also work here. [Read more about Pagination](/docs/pagination/)
+Pagination variables also work here. [Read more about Pagination](/docs/pagination/).
 
