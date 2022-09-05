@@ -5,7 +5,7 @@ eleventyNavigation:
 ---
 # Eleventy Dev Server {% addedin "2.0.0" %}
 
-Eleventy 2.0 bundles a brand new default development server. You can configure this with the new `setServerOptions` Configuration API method.
+Eleventy 2.0 bundles a brand new default development server. You can configure it with the new `setServerOptions` Configuration API method.
 
 {% codetitle ".eleventy.js" %}
 
@@ -17,13 +17,13 @@ module.exports = function(eleventyConfig) {
     // Opt-out of the live reload snippet
     enabled: true,
 
-    // Opt-out of DOM diffing updates and use page reloads
+    // Use DOM diffing updates instead of page reloads
     domdiff: true,
 
     // The starting port number to attempt to use
     port: 8080,
 
-    // number of times to increment the port if in use
+    // number of times to increment `port` if in use
     portReassignmentRetryCount: 10,
 
     // Show local network IP addresses for device testing
